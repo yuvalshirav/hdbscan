@@ -322,9 +322,10 @@ def _hdbscan_boruvka_balltree(X, min_samples=5, alpha=1.0,
 def check_precomputed_distance_matrix(X):
     """Perform check_array(X) after removing infinite values (numpy.inf) from the given distance matrix.
     """
-    tmp = X.copy()
-    tmp[np.isinf(tmp)] = 1
-    check_array(tmp)
+    # tmp = X.copy()
+    # tmp[np.isinf(tmp)] = 1
+    # check_array(tmp)
+    return True  # TODO check without copying!
 
 
 def hdbscan(X, min_cluster_size=5, min_samples=None, alpha=1.0,
