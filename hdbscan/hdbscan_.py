@@ -77,7 +77,7 @@ def _hdbscan_generic(X, min_samples=5, alpha=1.0, metric='minkowski', p=2,
         #   enables the usage of numpy.inf in the distance
         #   matrix to indicate missing distance information.
         # TODO: Check if copying is necessary
-        distance_matrix = X.copy()
+        distance_matrix = X  # X.copy()
     else:
         distance_matrix = pairwise_distances(X, metric=metric, **kwargs)
 
